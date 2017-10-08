@@ -1,1 +1,44 @@
+
+
+
+
 /* You can add global styles to this file, and also import other style files */
+
+
+/* bootstrap Overriding Css */
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.navbar-default {
+    background-color: rgba(176, 39, 196, 0.76);
+    border-color: rgba(176, 39, 196, 0.76);
+    color: white !important;
+}
+.navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a:hover {
+    color: white;
+    background-color: rgba(175, 81, 189, 0.83);
+}
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: white;
+    background-color: transparent;
+    font-size: large;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: rgba(175, 81, 189, 0.83);
+}
+.navbar-default .navbar-toggle {
+    border-color: rgba(176, 39, 196, 0.76);
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+/* bootstrap Overriding Css */

@@ -1,0 +1,142 @@
+<div class="container">
+  <h1>Contact us</h1>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="oe_structure">
+        <div>
+          <p>Contact us about anything related to services, our company.</p>
+        </div>
+      </div>
+      <div>
+        <form action="/website_form/" method="post" data-model_name="crm.lead" data-success_page="/page/website_crm.contactus_thanks"
+          class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data" data-editable-form="false">
+          <div class="form-group form-field o_website_form_required_custom">
+            <label class="col-md-3 col-sm-4 control-label" for="contact_name">Your Name</label>
+            <div class="col-md-7 col-sm-8">
+              <input type="text" class="form-control o_website_form_input" name="contact_name" required="" value="">
+            </div>
+          </div>
+          <div class="form-group form-field">
+            <label class="col-md-3 col-sm-4 control-label" for="phone">Phone Number</label>
+            <div class="col-md-7 col-sm-8">
+              <input type="text" class="form-control o_website_form_input" name="phone" value="">
+            </div>
+          </div>
+          <div class="form-group form-field o_website_form_required_custom">
+            <label class="col-md-3 col-sm-4 control-label" for="email_from">Email</label>
+            <div class="col-md-7 col-sm-8">
+              <input type="text" class="form-control o_website_form_input" name="email_from" required="" value="">
+            </div>
+          </div>
+          <div class="form-group form-field o_website_form_required_custom">
+            <label class="col-md-3 col-sm-4 control-label" for="partner_name">Your Company</label>
+            <div class="col-md-7 col-sm-8">
+              <input type="text" class="form-control o_website_form_input" name="partner_name" required="" value="">
+            </div>
+          </div>
+          <div class="form-group form-field o_website_form_required">
+            <label class="col-md-3 col-sm-4 control-label" for="name">Subject</label>
+            <div class="col-md-7 col-sm-8">
+              <select name="name" class="form-control" onchange="$('#do_you_know_edu').toggle($(this).val() === 'plan_to_test_teacher');">
+              <option value="plan_to_use">Use it in my company</option>
+              <option value="plan_to_sell">Offer Odoo services to other companies</option>
+              <option value="plan_to_test_student">I am a student</option>
+              <option value="plan_to_test_teacher">I am a teacher</option>
+          </select>
+              <a id="do_you_know_edu" class="help-block" href="/page/education-program" style="display:none" target="_blank">Do you know our Education Program ?</a>
+            </div>
+          </div>
+
+          <div class="form-group form-field o_website_form_required">
+            <label class="col-md-3 col-sm-4 control-label" for="name">Your company size :</label>
+            <div class="col-md-7 col-sm-8">
+              <select name="company_size" class="form-control">
+                      <option value=""></option>
+                      <option value="1-5" selected="">less than 5 employees</option>
+                      <option value="5-20" selected="">5-20 employees</option>
+                      <option value="20-50" selected="">20-50 employees</option>
+                      <option value="50-250" selected="">50-250 employees</option>
+                      <option value="250-over" selected="">more than 250 employees</option>
+                  </select>
+            </div>
+          </div>
+
+          <input type="hidden" name="force_scope" value="question">
+          <div class="form-group form-field o_website_form_required_custom">
+            <label class="col-md-3 col-sm-4 control-label" for="description">Your Question</label>
+            <div class="col-md-7 col-sm-8">
+              <textarea class="form-control o_website_form_input" name="description" required=""></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-offset-3 col-sm-offset-4 col-sm-8 col-md-7">
+              <span class="btn btn-primary btn-lg o_website_form_send" style="position: relative; overflow: hidden;">Send</span>
+              <span id="o_website_form_result"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4 mb32">
+
+    </div>
+  </div>
+</div>
+<div class="oe_structure" style="background-color: #f2f2f2;">
+  <section class="para_large mb8 oe_dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mb0 mt32">
+          <h1 class="text-center" style="text-align: left;">Our Offices
+
+          </h1>
+        </div>
+        <div class="col-md-12 mb8 mt0">
+          <h2>India</h2>
+          <p><strong>Sales Office</strong>
+            <br>3/244, Ochampalayam, Avinashi (Taluk),
+            <br>Tiruppur (Dist), Cheyur - 641655
+            <br>M Prakash:<a href="tel:+918903907782"> +91 8903907782
+          </a></p>         
+        </div>
+        <!-- <div class="col-md-4 mb0 mt0">
+          <h2>
+            <span style="color: inherit; line-height: 1.1;">America          
+          </span>
+          </h2>
+          <p><strong>Sales, Services</strong><br> 1485 Bayshore Blvd, Suite 450<br> San Francisco, CA 94124, United States<br>
+            <a href="http://tel:+16506913277" data-original-title="" title="">+1 (650) 691-3277&nbsp;</a>&nbsp;</p>
+          <p><strong>Sales Office
+            </strong><br>44 Wall Street Suite 603&nbsp;<br><span style="line-height: 1.42857;">New York, NY 10005, United States<br>
+           <a href="tel:+19147196712">+1 (929) 352-6366</a></span></p>
+          <div></div>
+        </div>
+        <div class="col-md-4 mb32 mt0">
+          <h2>
+            <span style="color: inherit; line-height: 1.1;">Asia/Pacific
+          
+          </span>
+          </h2>
+          <p><strong>Sales Office</strong><br>Room 405, 4/F, OfficePlus @Sheung Wan <br>No. 93-103 Wing Lok Street<br> Sheung
+            Wan, Hong Kong<br>
+            <a href="tel:+85239500600">+852 39 500 600
+          </a></p>
+          <p><strong>Services and R&amp;D</strong><br>201, Second Floor, IT Tower 4, <br>InfoCity Gate - 1<br><span style="line-height: 1.42857;">Gandhinagar -&nbsp;382007, Gujarat,&nbsp;India</span><br>
+            <a href="tel:+917940500100">+91 (79) 40 500 100
+              </a>
+          </p>
+          <div></div>
+        </div> -->
+        <div class="col-md-8 mb0 mt0"></div>
+        <div class="col-md-8 mb0 mt0" style="text-align: center;"></div>
+        <div class="col-md-12 mb32 mt0">
+          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=10pGXEGk0DGyXLEIC-COUWsAkuD0&amp;z=2" width="1024" height="508"></iframe>
+        </div>
+        <div class="col-md-7 mb0 mt16" style="text-align: center;"></div>
+        <div class="col-md-8 mb0 mt16" style="text-align: center;"></div>
+        <div class="col-md-8 mb0 mt0" style="text-align: center;"></div>
+        <div class="col-md-8 mb0 mt0" style="text-align: center;"></div>
+      </div>
+    </div>
+  </section>
+</div>
