@@ -9,6 +9,7 @@ import { AboutComponent } from './web-static/about/about.component';
 import { ContactComponent } from './web-static/contact/contact.component';
 import { LoginComponent } from './web-static/login/login.component';
 import { WebDynamicComponent } from './web-dynamic/web-dynamic.component';
+import {DashboardComponent} from './web-dynamic/dashboard/dashboard.component'
 
 
 
@@ -24,7 +25,8 @@ import { WebDynamicComponent } from './web-dynamic/web-dynamic.component';
     AboutComponent,
     ContactComponent,
     LoginComponent,
-    WebDynamicComponent
+    WebDynamicComponent,
+    DashboardComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
