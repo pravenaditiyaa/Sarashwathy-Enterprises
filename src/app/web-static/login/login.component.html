@@ -2,7 +2,7 @@
 
   <div class="box center-block offset-bottom-large">
     <h1 class="h4 page-header text-center offset-bottom">Sign In</h1>
-    <form method="post" action="/orders/new">
+    <form method="post" action="/dynamic/dash">
       <div class="form-group">
         <label class="control-label required" for="login_username">E-mail</label>
         <input type="email" id="login_username" name="login[username]" class="form-control">
@@ -12,9 +12,9 @@
         <input type="password" id="login_password" name="login[password]" class="form-control">
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-raised btn-block">
-                        Sign In
-                    </button>
+        <button  routerLink="/dynamic/dash" type="submit" class="btn btn-primary btn-raised btn-block">
+          Sign In
+        </button>
       </div>
     </form>
   </div>
