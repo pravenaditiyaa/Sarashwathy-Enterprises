@@ -6,6 +6,7 @@ import { WebDynamicComponent } from './web-dynamic.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { ItemsComponent } from './items/items.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
     children: [
       { path: 'dash', component: DashboardComponent },
       { path: 'contacts', component: ContactsComponent },
+      { path: 'items', component: ItemsComponent },
     ]
   },
 ];

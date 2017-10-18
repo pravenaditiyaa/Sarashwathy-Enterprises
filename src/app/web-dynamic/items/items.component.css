@@ -1,0 +1,11 @@
+:host /deep/ .ui-dialog input{
+    width: 100%;
+    }
+    
+    :host /deep/ .ui-dialog{
+        width: 100%;
+        }
+    
+    :host /deep/ .ui-datatable table{
+        height: 530px;
+    }

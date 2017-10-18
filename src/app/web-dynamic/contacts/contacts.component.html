@@ -1,36 +1,106 @@
-
 <div class="content-section implementation">
-    <p-dataTable [value]="contacts" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
+    <p-dataTable [value]="contacts" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true"
+        rows="15" [responsive]="true">
+        <p-header>Customer Contact Details</p-header>
         <p-column field="firstName" header="Name" [sortable]="true"></p-column>
         <p-column field="email" header="Email" [sortable]="true"></p-column>
         <p-column field="primaryContactNumber" header="Contact Number" [sortable]="true"></p-column>
         <p-column field="country" header="Country" [sortable]="true"></p-column>
-        <p-footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></p-footer>
+        <p-footer>
+            <div class="ui-helper-clearfix" style="width:100%">
+                <button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button>
+            </div>
+        </p-footer>
     </p-dataTable>
 
-    <p-dialog header="Contacts Details" [(visible)]="displayDialog"  [width]="800" [responsive]="true" showEffect="fade" [modal]="true">
+    <p-dialog header="Contacts Details" [(visible)]="displayDialog" [width]="800" [responsive]="true" showEffect="fade" [modal]="true">
         <div class="ui-grid ui-grid-responsive ui-grid-col-12 ui-fluid" *ngIf="contact">
             <div class="ui-grid-row">
-                <div class="ui-grid-col-2"><label for="firstName">First Name</label></div>
-                <div class="ui-grid-col-2"><input pInputText id="firstName" [(ngModel)]="contact.firstName" /></div>
-                <div class="ui-grid-col-2"><label for="middelName">Middel Name</label></div>
-                <div class="ui-grid-col-2"><input pInputText id="middelName" [(ngModel)]="contact.middelName" /></div>
-                <div class="ui-grid-col-2"><label for="lastName">Last Name</label></div>
-                <div class="ui-grid-col-2"><input pInputText id="lastName" [(ngModel)]="contact.lastName" /></div>
+                <div class="ui-grid-col-2 px5">
+                    <label for="middelName">First Name</label>
+                </div>
+                <div class="ui-grid-col-2 px5">
+                    <input pInputText id="firstName" [(ngModel)]="contact.firstName" />
+                </div>
+                <div class="ui-grid-col-2 px5">
+                    <label for="middelName">Middel Name</label>
+                </div>
+                <div class="ui-grid-col-2 px5">
+                    <input pInputText id="middelName" [(ngModel)]="contact.middelName" />
+                </div>
+                <div class="ui-grid-col-2 px5">
+                    <label for="lastName">Last Name</label>
+                </div>
+                <div class="ui-grid-col-2 px5">
+                    <input pInputText id="lastName" [(ngModel)]="contact.lastName" />
+                </div>
             </div>
             <div class="ui-grid-row">
-                <div class="ui-grid-col-4"><label for="year">Email</label></div>
-                <div class="ui-grid-col-8"><input pInputText id="year" [(ngModel)]="contact.email" /></div>
+                <div class="ui-grid-col-4 px5">
+                    <label for="year">Email</label>
+                </div>
+                <div class="ui-grid-col-8 px5">
+                    <input pInputText id="year" [(ngModel)]="contact.email" />
+                </div>
             </div>
             <div class="ui-grid-row">
-                <div class="ui-grid-col-3"><label for="primaryContactNumber">Contact Number</label></div>
-                <div class="ui-grid-col-3"><input pInputText id="primaryContactNumber" [(ngModel)]="contact.primaryContactNumber" /></div>
-                <div class="ui-grid-col-3"><label for="secondaryContactNumber">Contact Number</label><i>(optional)</i></div>
-                <div class="ui-grid-col-3"><input pInputText id="secondaryContactNumber" [(ngModel)]="contact.secondaryContactNumber" /></div>
+                <div class="ui-grid-col-3 px5">
+                    <label for="primaryContactNumber">Contact Number</label>
+                </div>
+                <div class="ui-grid-col-3 px5">
+                    <input pInputText id="primaryContactNumber" [(ngModel)]="contact.primaryContactNumber" />
+                </div>
+                <div class="ui-grid-col-3 px5">
+                    <label for="secondaryContactNumber">Contact Number</label>
+                    <i>(optional)</i>
+                </div>
+                <div class="ui-grid-col-3 px5">
+                    <input pInputText id="secondaryContactNumber" [(ngModel)]="contact.secondaryContactNumber" />
+                </div>
             </div>
             <div class="ui-grid-row">
-                <div class="ui-grid-col-4"><label for="color">Country</label></div>
-                <div class="ui-grid-col-8"><input pInputText id="color" [(ngModel)]="contact.country" /></div>
+                <div class="ui-grid-col-4 px5">
+                    <label for="street">Street</label>
+                </div>
+                <div class="ui-grid-col-8 px5">
+                    <input pInputText id="street" [(ngModel)]="contact.street" />
+                </div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-4 px5">
+                    <label for="buildingName">Building Name</label>
+                </div>
+                <div class="ui-grid-col-8 px5">
+                    <input pInputText id="buildingName" [(ngModel)]="contact.buildingName" />
+                </div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-3 px5">
+                    <label for="area">Area</label>
+                </div>
+                <div class="ui-grid-col-3 px5">
+                    <input pInputText id="area" [(ngModel)]="contact.area" />
+                </div>
+                <div class="ui-grid-col-3 px5">
+                    <label for="city">City</label>
+                </div>
+                <div class="ui-grid-col-3 px5">
+                    <input pInputText id="city" [(ngModel)]="contact.city" />
+                </div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-3 px5">
+                    <label for="PinCode">PinCode</label>
+                </div>
+                <div class="ui-grid-col-3 px5">
+                    <input pInputText id="PinCode" [(ngModel)]="contact.pinCode" />
+                </div>
+                <div class="ui-grid-col-3 px5">
+                    <label for="country">Country</label>
+                </div>
+                <div class="ui-grid-col-3 px5">
+                    <input pInputText id="country" [(ngModel)]="contact.country" />
+                </div>
             </div>
         </div>
         <p-footer>

@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-class Car {
-  vin?: string;
-  year?: number;
-  brand?: string;
-  color?: string;
-}
-
 class Contacts {
   id: number;
   firstName: string;

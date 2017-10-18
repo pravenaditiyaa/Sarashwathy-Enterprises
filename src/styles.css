@@ -40,3 +40,10 @@
     background-color: white;
 }
 /* bootstrap Overriding Css */
+
+/*CSS global*/
+
+.px5{
+    padding: 5px;
+}
+/*CSS global*/

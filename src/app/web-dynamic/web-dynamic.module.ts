@@ -10,6 +10,7 @@ import { WebDynamicComponent } from './web-dynamic.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { ItemsComponent } from './items/items.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { ContactsComponent } from './contacts/contacts.component';
   declarations: [
     WebDynamicComponent,
     DashboardComponent,
-    ContactsComponent
+    ContactsComponent,
+    ItemsComponent
   ],
   providers: [],
   bootstrap: []
