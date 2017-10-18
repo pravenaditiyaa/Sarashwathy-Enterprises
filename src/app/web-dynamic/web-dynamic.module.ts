@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { DataTableModule, SharedModule, DialogModule } from 'primeng/primeng';
+import { DataTableModule, SharedModule, DialogModule, ButtonModule } from 'primeng/primeng';
 
 import { WebDynamicComponent } from './web-dynamic.component';
 
@@ -18,7 +18,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     SharedModule,
     DialogModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    ButtonModule
 
   ],
   declarations: [

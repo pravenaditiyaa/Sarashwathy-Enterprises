@@ -7,6 +7,22 @@ class Car {
   color?: string;
 }
 
+class Contacts {
+  id: number;
+  firstName: string;
+  middelName: string;
+  lastName: string;
+  primaryContactNumber: number;
+  secondaryContactNumber: number;
+  email: string;
+  street: string;
+  buildingName: string;
+  area: string;
+  city: string;
+  pinCode: number;
+  country: string;
+}
+
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
@@ -16,72 +32,94 @@ export class ContactsComponent implements OnInit {
 
   displayDialog: boolean;
 
-  car: Car = new PrimeCar();
-
-  selectedCar: Car;
+  selectedCar: Contacts;
 
   newCar: boolean;
 
-  cars: Car[];
+  contact: Contacts;
+
+  contacts: Contacts[];
 
   constructor() { }
 
   ngOnInit() {
-    this.cars = [
-      { vin: 'A1', year: 1, brand: 'A1', color: 'A1' },
-      { vin: 'A2', year: 2, brand: 'A2', color: 'A2' },
-      { vin: 'A3', year: 3, brand: 'A3', color: 'A3' },
-      { vin: 'A4', year: 4, brand: 'A4', color: 'A4' }
-    ]
+    this.contacts = [
+      {
+        id: 0, firstName: 'praven',
+        middelName: 'adi',
+        lastName: 'K G',
+        primaryContactNumber: 1234,
+        secondaryContactNumber: 12324,
+        email: 'kg@gmail.com',
+        street: 'qweqwe',
+        buildingName: 'qweqwe',
+        area: 'qweqwe',
+        city: 'qweqwe',
+        pinCode: 2424,
+        country: 'qweqwe'
+      }
+    ];
   }
 
   showDialogToAdd() {
     this.newCar = true;
-    this.car = new PrimeCar();
+    this.contact = this.resetContactsObj();
     this.displayDialog = true;
   }
 
   save() {
-    let cars = [...this.cars];
-    if (this.newCar)
-      cars.push(this.car);
-    else
-      cars[this.findSelectedCarIndex()] = this.car;
+    const contacts = [...this.contacts];
+    if (this.newCar) {
+      contacts.push(this.contact);
+    } else {
+      contacts[this.findSelectedCarIndex()] = this.contact;
+    }
 
-    this.cars = cars;
-    this.car = null;
+    this.contacts = contacts;
+    this.contact = null;
     this.displayDialog = false;
   }
 
   delete() {
-    let index = this.findSelectedCarIndex();
-    this.cars = this.cars.filter((val, i) => i != index);
-    this.car = null;
+    const index = this.findSelectedCarIndex();
+    this.contacts = this.contacts.filter((val, i) => i !== index);
+    this.contact = null;
     this.displayDialog = false;
   }
 
   onRowSelect(event) {
     this.newCar = false;
-    this.car = this.cloneCar(event.data);
+    this.contact = this.cloneCar(event.data);
     this.displayDialog = true;
   }
 
-  cloneCar(c: Car): Car {
-    let car = new PrimeCar();
+  cloneCar(c: Contacts): Contacts {
+    const contact = this.resetContactsObj();
     for (let prop in c) {
-      car[prop] = c[prop];
+      contact[prop] = c[prop];
     }
-    return car;
+    return contact;
   }
 
   findSelectedCarIndex(): number {
-    return this.cars.indexOf(this.selectedCar);
+    return this.contacts.indexOf(this.selectedCar);
   }
 
+  resetContactsObj(): Contacts {
+    return {
+      id: 0, firstName: '',
+      middelName: '',
+      lastName: '',
+      primaryContactNumber: null,
+      secondaryContactNumber: null,
+      email: '',
+      street: '',
+      buildingName: '',
+      area: '',
+      city: '',
+      pinCode: null,
+      country: ''
+    };
+  }
 
-}
-
-class PrimeCar implements Car {
-
-  constructor(public vin?, public year?, public brand?, public color?) { }
 }
