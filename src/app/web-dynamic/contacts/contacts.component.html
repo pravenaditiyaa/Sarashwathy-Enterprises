@@ -1,5 +1,5 @@
 <div class="content-section implementation">
-    <p-dataTable [value]="contacts" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true"
+    <p-dataTable [value]="contacts" selectionMode="single" [(selection)]="selectedContact" (onRowSelect)="onRowSelect($event)" [paginator]="true"
         rows="15" [responsive]="true">
         <p-header>Customer Contact Details</p-header>
         <p-column field="firstName" header="Name" [sortable]="true"></p-column>
@@ -13,7 +13,7 @@
         </p-footer>
     </p-dataTable>
 
-    <p-dialog header="Contacts Details" [(visible)]="displayDialog" [width]="800" [responsive]="true" showEffect="fade" [modal]="true">
+    <p-dialog header="Contacts Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
         <div class="ui-grid ui-grid-responsive ui-grid-col-12 ui-fluid" *ngIf="contact">
             <div class="ui-grid-row">
                 <div class="ui-grid-col-2 px5">

@@ -25,7 +25,7 @@ export class ContactsComponent implements OnInit {
 
   displayDialog: boolean;
 
-  selectedCar: Contacts;
+  selectedContact: Contacts;
 
   newCar: boolean;
 
@@ -95,7 +95,7 @@ export class ContactsComponent implements OnInit {
   }
 
   findSelectedCarIndex(): number {
-    return this.contacts.indexOf(this.selectedCar);
+    return this.contacts.indexOf(this.selectedContact);
   }
 
   resetContactsObj(): Contacts {

@@ -3,9 +3,9 @@
     }
     
     :host /deep/ .ui-dialog{
-        width: 100%;
+        width: 90%;
         }
     
     :host /deep/ .ui-datatable table{
-        height: 530px;
+        height: calc(100vh - 163px);
     }

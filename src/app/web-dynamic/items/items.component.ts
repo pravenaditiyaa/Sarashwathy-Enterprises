@@ -1,18 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-class Contacts {
+class Item {
   id: number;
-  firstName: string;
-  middelName: string;
-  lastName: string;
-  primaryContactNumber: number;
-  secondaryContactNumber: number;
-  email: string;
-  street: string;
-  buildingName: string;
-  area: string;
-  city: string;
-  pinCode: number;
-  country: string;
+  name: string;
+  description: string;
+  catogry: string;
+  type: number;
 }
 @Component({
   selector: 'app-items',
@@ -24,93 +16,77 @@ export class ItemsComponent implements OnInit {
 
   displayDialog: boolean;
 
-  selectedCar: Contacts;
+  selectedItem: Item;
 
   newCar: boolean;
 
-  contact: Contacts;
+  item: Item;
 
-  contacts: Contacts[];
+  items: Item[];
 
   constructor() { }
 
   ngOnInit() {
-    this.contacts = [
+    this.items = [
       {
-        id: 0, firstName: 'praven',
-        middelName: 'adi',
-        lastName: 'K G',
-        primaryContactNumber: 1234,
-        secondaryContactNumber: 12324,
-        email: 'kg@gmail.com',
-        street: 'qweqwe',
-        buildingName: 'qweqwe',
-        area: 'qweqwe',
-        city: 'qweqwe',
-        pinCode: 2424,
-        country: 'qweqwe'
+        id: 0, name: 'praven',
+        description: 'adi',
+        catogry: 'K G',
+        type: 1234
       }
     ];
   }
 
   showDialogToAdd() {
     this.newCar = true;
-    this.contact = this.resetContactsObj();
+    this.item = this.resetContactsObj();
     this.displayDialog = true;
   }
 
   save() {
-    const contacts = [...this.contacts];
+    const items = [...this.items];
     if (this.newCar) {
-      contacts.push(this.contact);
+      items.push(this.item);
     } else {
-      contacts[this.findSelectedCarIndex()] = this.contact;
+      items[this.findSelectedCarIndex()] = this.item;
     }
 
-    this.contacts = contacts;
-    this.contact = null;
+    this.items = items;
+    this.item = null;
     this.displayDialog = false;
   }
 
   delete() {
     const index = this.findSelectedCarIndex();
-    this.contacts = this.contacts.filter((val, i) => i !== index);
-    this.contact = null;
+    this.items = this.items.filter((val, i) => i !== index);
+    this.item = null;
     this.displayDialog = false;
   }
 
   onRowSelect(event) {
     this.newCar = false;
-    this.contact = this.cloneCar(event.data);
+    this.item = this.cloneCar(event.data);
     this.displayDialog = true;
   }
 
-  cloneCar(c: Contacts): Contacts {
-    const contact = this.resetContactsObj();
+  cloneCar(c: Item): Item {
+    const item = this.resetContactsObj();
     for (let prop in c) {
-      contact[prop] = c[prop];
+      item[prop] = c[prop];
     }
-    return contact;
+    return item;
   }
 
   findSelectedCarIndex(): number {
-    return this.contacts.indexOf(this.selectedCar);
+    return this.items.indexOf(this.selectedItem);
   }
 
-  resetContactsObj(): Contacts {
+  resetContactsObj(): Item {
     return {
-      id: 0, firstName: '',
-      middelName: '',
-      lastName: '',
-      primaryContactNumber: null,
-      secondaryContactNumber: null,
-      email: '',
-      street: '',
-      buildingName: '',
-      area: '',
-      city: '',
-      pinCode: null,
-      country: ''
+      id: 0, name: '',
+      description: '',
+      catogry: '',
+      type: null
     };
   }
 
