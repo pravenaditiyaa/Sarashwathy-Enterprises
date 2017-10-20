@@ -11,6 +11,8 @@ import { WebDynamicComponent } from './web-dynamic.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ItemsComponent } from './items/items.component';
+import { BillsComponent } from './bills/bills.component';
+import { InvoicesComponent } from './invoices/invoices.component';
 
 @NgModule({
   imports: [
@@ -27,7 +29,9 @@ import { ItemsComponent } from './items/items.component';
     WebDynamicComponent,
     DashboardComponent,
     ContactsComponent,
-    ItemsComponent
+    ItemsComponent,
+    BillsComponent,
+    InvoicesComponent
   ],
   providers: [],
   bootstrap: []
