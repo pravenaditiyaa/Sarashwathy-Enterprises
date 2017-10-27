@@ -6,11 +6,10 @@ import { WebStaticComponent } from './web-static/web-static.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'static/home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'static/home', pathMatch: 'full' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
